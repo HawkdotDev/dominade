@@ -74,7 +74,13 @@ function App() {
           color={textColor}
           border={border}
         />
-        <nav ref={navRef} className="w-full">
+        <nav
+          ref={navRef}
+          style={{
+            backgroundColor: bgColor,
+          }}
+          className="w-full sticky top-8 z-[99]"
+        >
           <div
             style={{
               borderColor: border,
@@ -101,7 +107,7 @@ function App() {
               </h1>
             </div>
           </div>
-          <div className="w-full flex justify-between items-center">
+          <div className="w-full flex justify-between items-center bg-neutral-800">
             <div className="w-[75%] flex items-center font-hagrid text-md py-[2px]">
               {sections.map((section, index) => {
                 const hoverColor = section.bgColor;
@@ -118,23 +124,47 @@ function App() {
                   </h1>
                 );
               })}
+              {/* {sections.map((section, index) => {
+                return (
+                  <h1
+                    key={index}
+                    style={{
+                      borderColor: textColor,
+                      backgroundColor: section.bgColor,
+                    }}
+                    className="section-item border-l text-black"
+                  >
+                    {section.name}
+                  </h1>
+                );
+              })} */}
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="25px"
-              viewBox="0 -960 960 960"
-              width="25px"
-              fill={bgColor}
+            <div
               style={{ backgroundColor: textColor }}
-              className="rounded-full p-1"
+              className="w-[22.5%] h-[26px] flex justify-end"
             >
-              <path d="M779.38-153.85 528.92-404.31q-30 25.54-69 39.54t-78.38 14q-96.1 0-162.67-66.53-66.56-66.53-66.56-162.57 0-96.05 66.53-162.71 66.53-66.65 162.57-66.65 96.05 0 162.71 66.56Q610.77-676.1 610.77-580q0 41.69-14.77 80.69t-38.77 66.69l250.46 250.47-28.31 28.3ZM381.54-390.77q79.61 0 134.42-54.81 54.81-54.8 54.81-134.42 0-79.62-54.81-134.42-54.81-54.81-134.42-54.81-79.62 0-134.42 54.81-54.81 54.8-54.81 134.42 0 79.62 54.81 134.42 54.8 54.81 134.42 54.81Z" />
-            </svg>
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full h-full px-2 bg-transparent text-black outline-none font-hagrid text-sm pl-5"
+                style={{ color: bgColor }}
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="25px"
+                viewBox="0 -960 960 960"
+                width="25px"
+                fill={bgColor}
+                className="rounded-full p-[1px] mr-1"
+              >
+                <path d="M779.38-153.85 528.92-404.31q-30 25.54-69 39.54t-78.38 14q-96.1 0-162.67-66.53-66.56-66.53-66.56-162.57 0-96.05 66.53-162.71 66.53-66.65 162.57-66.65 96.05 0 162.71 66.56Q610.77-676.1 610.77-580q0 41.69-14.77 80.69t-38.77 66.69l250.46 250.47-28.31 28.3ZM381.54-390.77q79.61 0 134.42-54.81 54.81-54.8 54.81-134.42 0-79.62-54.81-134.42-54.81-54.81-134.42-54.81-79.62 0-134.42 54.81-54.81 54.8-54.81 134.42 0 79.62 54.81 134.42 54.8 54.81 134.42 54.81Z" />
+              </svg>
+            </div>
           </div>
         </nav>
         <div
           style={{ backgroundColor: textColor }}
-          className="flex w-full overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
+          className="flex w-full gap-3 overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
         >
           <UpcomingCard
             tagBG={"#23eb55"}
@@ -189,20 +219,120 @@ function App() {
             className="w-[80%] bg-transparent border-t"
           >
             <div className="w-full h-[63.3%] pt-1">
-              <h1 className="text-3xl font-bold h-[7%]">
-                Editors Pick
+              <h1 className="h-[7%] mt-2 mb-[5px] flex justify-between">
+                <h1 className="text-3xl font-bold">Editors Pick</h1>
+                <button onClick={()=>{
+                  alert("maybe some other time! boss is sleeping.")
+                }} className="mr-2 py-1 px-2 rounded-sm bg-slate-700">
+                  see all
+                </button>
               </h1>
-              <div className="h-[93%] w-[99.5%]">
+              <div className="h-[93%] w-[99.5%] flex flex-col justify-between">
                 <div className="flex w-full h-[49.5%] justify-between">
-                  <div className="w-[46%] bg-white">
-
+                  <div className="w-[46%] bg-stone-800 flex">
+                    <img
+                      src="https://m.media-amazon.com/images/M/MV5BYzQ0NGZkOTMtMjMxMy00NWY0LWIxYzctZjhiZTdjZDA5OTJjXkEyXkFqcGc@._V1_.jpg"
+                      alt="wolf among us 2"
+                      style={{ aspectRatio: 1 / 1 }}
+                      className="h-full object-cover object-center"
+                    />
+                    <div className="w-full text-wrap p-4 flex flex-col justify-between">
+                      <div>
+                        <div className="flex gap-2 items-center mb-1">
+                          <h1 className="text-sm bg-red-500 px-1 py-[2px] text-black">
+                            #Gaming
+                          </h1>
+                          <h1 className="text-sm bg-[#FF6B81] px-1 py-[2px] text-black">
+                            #Buzz
+                          </h1>
+                        </div>
+                        <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
+                        <h2 className="text-sm text-gray-500">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Quos quod amet vero Lorem, ipsum dolor.
+                        </h2>
+                      </div>
+                      <div className="flex bottom-0">
+                        <div className="flex pr-4 border-r border-white">
+                          <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                          <h1 className="text-xs">Bigby wolf</h1>
+                        </div>
+                        <div className="text-xs text-pink-500 pl-4">
+                          some time
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-[26.5%] bg-emerald-400">
-
+                  <div className="w-[26.5%] relative">
+                    <img
+                      src="https://i.ytimg.com/vi/5hXrQTDWyhY/maxresdefault.jpg"
+                      alt="wolf among us 2"
+                      className="h-full w-full object-cover object-bottom absolute"
+                    />
+                    <div className="w-full h-full bg-black/40 absolute p-4 flex justify-between flex-col">
+                      <div>
+                        <div className="flex gap-2 items-center mb-1">
+                          <h1 className="text-sm bg-[#FFD700] px-1 py-[2px] text-black">
+                            #Film & TV
+                          </h1>
+                          <h1 className="text-sm bg-[#FF6B81] px-1 py-[2px] text-black">
+                            #Buzz
+                          </h1>
+                        </div>
+                        <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
+                        <h2 className="text-sm text-gray-400">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Quos quod amet vero Lorem, ipsum dolor.
+                        </h2>
+                      </div>
+                      <div className="flex bottom-0">
+                        <div className="flex pr-4 border-r border-white">
+                          <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                          <h1 className="text-xs">Bigby wolf</h1>
+                        </div>
+                        <div className="text-xs text-pink-500 pl-4">
+                          some time
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-[26.5%] bg-emerald-400">
-
+                  <div className="w-[26.5%] bg-red-500 p-6 flex items-center justify-center">
+                    ads play here
                   </div>
+                </div>
+                <div className="w-full h-[49.5%] flex justify-between">
+                  <div className="w-[35%] h-full bg-yellow-500 relative">
+                    <img
+                      src="https://cdnr.escharts.com/uploads/public/66c/edd/070/66cedd0701409241009183.png?width=737&height=255&extension=png"
+                      alt="wolf among us 2"
+                      className="h-full w-full object-cover object-left-bottom absolute"
+                    />
+                    <div className="w-full h-full bg-black/40 absolute flex justify-between flex-col">
+                      <div className="flex gap-2 items-center mb-1 p-4">
+                        <h1 className="text-sm bg-[#4BFFA5] px-1 py-[2px] text-black">
+                          #Esports
+                        </h1>
+                        <h1 className="text-sm bg-[#FF6B81] px-1 py-[2px] text-black">
+                          #Buzz
+                        </h1>
+                      </div>
+                      <div className="px-4 py-3 bg-neutral-800">
+                        <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
+                        <div className="flex mt-1">
+                          <div className="flex pr-4 border-r border-white">
+                            <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                            <h1 className="text-xs">Bigby wolf</h1>
+                          </div>
+                          <div className="text-xs text-pink-500 pl-4">
+                            some time
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-[20%] h-full bg-purple-950"></div>
+                  <div className="w-[20%] h-full bg-yellow-500"></div>
+                  <div className="w-[23.5%] h-full bg-yellow-500"></div>
                 </div>
               </div>
             </div>
@@ -221,7 +351,7 @@ function App() {
           >
             <h1
               style={{ backgroundColor: bgColor, color: textColor }}
-              className="text-3xl py-1 px-2 font-bold"
+              className="text-3xl mt-2 py-1 px-2 font-bold"
             >
               Trending
             </h1>
