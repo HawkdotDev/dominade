@@ -88,14 +88,16 @@ function App() {
               <h1>Discover</h1>
               <h1>About</h1>
             </div>
-            <div className="flex gap-6 items-center px-2 cursor-pointer hover:text-blue-500">
+            <div className="flex gap-6 items-center px-2">
               <ThemeButton
                 IsLight={IsLight}
                 setIsLight={setIsLight}
                 moonIcon={moon}
                 sunIcon={sun}
               />
-              <h1 className="font-hagrid font-bold">Login</h1>
+              <h1 className="font-hagrid font-bold text-pink-600 cursor-pointer hover:text-blue-500">
+                Login
+              </h1>
             </div>
           </div>
           <div className="w-full flex justify-between items-center">
@@ -119,9 +121,9 @@ function App() {
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              height="28px"
+              height="25px"
               viewBox="0 -960 960 960"
-              width="28px"
+              width="25px"
               fill={bgColor}
               style={{ backgroundColor: textColor }}
               className="rounded-full p-1"
@@ -132,9 +134,10 @@ function App() {
         </nav>
         <div
           style={{ backgroundColor: textColor }}
-          className="flex w-full gap-2 overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
+          className="flex w-full overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
         >
           <UpcomingCard
+            tagBG={"#23eb55"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={
@@ -142,6 +145,7 @@ function App() {
             }
           />
           <UpcomingCard
+            tagBG={"#23a8eb"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={
@@ -149,11 +153,13 @@ function App() {
             }
           />
           <UpcomingCard
+            tagBG={"#ffffff"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={"https://wallpapercave.com/wp/wp10511195.jpg"}
           />
           <UpcomingCard
+            tagBG={"#f20f62"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={
@@ -161,11 +167,13 @@ function App() {
             }
           />
           <UpcomingCard
+            tagBG={"#9e23eb"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={"https://i.ytimg.com/vi/5hXrQTDWyhY/maxresdefault.jpg"}
           />
           <UpcomingCard
+            tagBG={"#e3df0e"}
             borderColor={bgColor}
             textColor={IsLight ? darkText : lightText}
             imgURL={
@@ -173,21 +181,33 @@ function App() {
             }
           />
         </div>
-        <div className="flex font-hagrid font-bold">
+        <div className="flex font-hagrid font-bold w-full">
           <div
             style={{
               borderColor: border,
             }}
-            className="w-[80%] bg-transparent border-t p-3"
+            className="w-[80%] bg-transparent border-t"
           >
-            <div className="w-full">
-              <h1 className="text-sm">
+            <div className="w-full h-[63%] bg-red-400">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
+              laborum nam consectetur, impedit nobis quo aperiam nihil eius
+              animi dolore officiis harum, temporibus sapiente molestiae illo
+              officia repellat accusantium assumenda itaque ad mollitia numquam
+              dolores quibusdam. Necessitatibus, sed! Ducimus cumque asperiores
+              laudantium corrupti voluptatum alias? Fugit sit nemo adipisci
+              quasi autem veniam itaque ullam asperiores, provident soluta id
+              earum odit, ducimus eveniet corporis tempore? At dolor hic magnam,
+              adipisci animi veritatis cumque provident voluptatum aspernatur
+              sapiente quibusdam consequuntur accusantium quidem, exercitationem
+              distinctio quis placeat minima. Magnam aut accusantium, inventore
+              saepe est sapiente et vitae, fugiat odit, quae voluptatum hic!
+            </div>
+            {/* <h1 className="text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Accusantium vero optio, debitis illo laudantium obcaecati
                 doloribus, hic, blanditiis fugit expedita possimus numquam enim
                 nam iusto.
-              </h1>
-            </div>
+              </h1> */}
           </div>
           <div
             style={{
