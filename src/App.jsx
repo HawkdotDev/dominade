@@ -79,7 +79,7 @@ function App() {
           style={{
             backgroundColor: bgColor,
           }}
-          className="w-full sticky top-8 z-[99]"
+          className="w-full sticky top-[32.5px] z-[99]"
         >
           <div
             style={{
@@ -218,15 +218,18 @@ function App() {
             }}
             className="w-[80%] bg-transparent border-t"
           >
-            <div className="w-full h-[63.3%] pt-1">
-              <h1 className="h-[7%] mt-2 mb-[5px] flex justify-between">
+            <div className="w-full h-[63.3%] pt-1 mt-2 mb-[5px]">
+              <div className="h-[7%] flex justify-between">
                 <h1 className="text-3xl font-bold">Editors Pick</h1>
-                <button onClick={()=>{
-                  alert("maybe some other time! boss is sleeping.")
-                }} className="mr-2 py-1 px-2 rounded-sm bg-slate-700">
+                <button
+                  onClick={() => {
+                    alert("maybe some other time! boss is sleeping.");
+                  }}
+                  className="mr-2 py-1 mb-1 px-2 rounded-sm bg-slate-700"
+                >
                   see all
                 </button>
-              </h1>
+              </div>
               <div className="h-[93%] w-[99.5%] flex flex-col justify-between">
                 <div className="flex w-full h-[49.5%] justify-between">
                   <div className="w-[46%] bg-stone-800 flex">
@@ -330,18 +333,83 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="w-[20%] h-full bg-purple-950"></div>
-                  <div className="w-[20%] h-full bg-yellow-500"></div>
-                  <div className="w-[23.5%] h-full bg-yellow-500"></div>
+                  <div className="w-[20%] h-full bg-purple-950">
+                    <div className="w-full h-full bg-black/40 p-4 flex justify-between flex-col">
+                      <div>
+                        <div className="flex gap-2 items-center mb-1">
+                          <h1 className="text-sm bg-[#FF6B81] px-1 py-[2px] text-black">
+                            #Buzz
+                          </h1>
+                        </div>
+                        <h1>Lorem ipsum dolor sit amet consectetur</h1>
+                        <h2 className="text-xs text-gray-400 mt-1 pt-2">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Quos quod amet vero Lorem, ipsum dolor.
+                        </h2>
+                      </div>
+                      <div className="flex bottom-0">
+                        <div className="flex pr-4 border-r border-white">
+                          <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                          <h1 className="text-xs">Bigby wolf</h1>
+                        </div>
+                        <div className="text-xs text-pink-500 pl-4">
+                          some time
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-[25%] h-full relative">
+                    <img
+                      src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/dgj1z72-b23d5b7d-2a04-4146-abbc-7e4393124ef1.png/v1/fill/w_1129,h_707/grand_theft_auto_vi___gta_6_4k_supreme_wallpaper_by_nurboyxvi_dgj1z72-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjYwNyIsInBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGdqMXo3Mi1iMjNkNWI3ZC0yYTA0LTQxNDYtYWJiYy03ZTQzOTMxMjRlZjEucG5nIiwid2lkdGgiOiI8PTQxNjEifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.K7Z-v7XQggTbd19yL14MWe8I3aptItHE7ZrjhMTR9WI"
+                      alt="wolf among us 2"
+                      className="h-full w-full object-cover object-bottom absolute"
+                    />
+                    <div className="w-full h-full bg-black/60 absolute p-4 flex justify-between flex-col">
+                      <div>
+                        <div className="flex gap-2 items-center mb-1">
+                          <h1 className="text-sm bg-[#ff002b] px-1 py-[2px] text-black">
+                            #Gaming
+                          </h1>
+                          <h1 className="text-sm bg-[#3250f6] px-1 py-[2px] text-black">
+                            #GTA 6
+                          </h1>
+                        </div>
+                        <h1 className="text-yellow-300">
+                          Lorem ipsum dolor sit amet consectetur ?
+                        </h1>
+                        <h2 className="text-sm">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Quos quod amet vero Lorem, ipsum dolor.
+                        </h2>
+                      </div>
+                      <div className="flex bottom-0">
+                        <div className="flex pr-4 border-r border-white">
+                          <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                          <h1 className="text-xs">Bigby wolf</h1>
+                        </div>
+                        <div className="text-xs text-pink-500 pl-4">
+                          some time
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-[18.5%] h-full bg-yellow-500">
+                    <img
+                      src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/dhehxj7-f2e0e6a1-3f49-4b0b-914b-8d2dfd8b4804.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGhlaHhqNy1mMmUwZTZhMS0zZjQ5LTRiMGItOTE0Yi04ZDJkZmQ4YjQ4MDQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TefbmZN43SGyDFc2Fnt_2bp3qcN_xyFY64Yy40M9OAA"
+                      alt="wolf among us 2"
+                      className="h-full w-full object-cover object-bottom"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-            {/* <h1 className="text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium vero optio, debitis illo laudantium obcaecati
-                doloribus, hic, blanditiis fugit expedita possimus numquam enim
-                nam iusto.
-              </h1> */}
+            <h1 className="text-sm mt3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusantium vero optio, debitis illo laudantium obcaecati
+              doloribus, hic, blanditiis fugit expedita possimus numquam enim
+              nam iusto.
+            </h1>
           </div>
           <div
             style={{
@@ -355,7 +423,62 @@ function App() {
             >
               Trending
             </h1>
-            <h1 className="h-screen p-2">lendi stories</h1>
+            <h1 className="p-2 mt-2">
+              <h1 className="text-red-500">lendi story 1</h1>
+              <h2 className="text-xs mt-[4px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
+              </h2>
+              <div className="flex mt-[2px]">
+                <div className="flex pr-4 border-r border-white mt-1 items-center">
+                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                  <h1 className="text-xs">Bigby wolf</h1>
+                </div>
+                <div className="text-xs text-pink-500 pl-4 pt-[5px]">some time</div>
+              </div>
+            </h1>
+            <h1 className="p-2 mt-2">
+              <h1 className="text-red-500">lendi story 2</h1>
+              <h2 className="text-xs mt-[4px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
+              </h2>
+              <div className="flex mt-[2px]">
+                <div className="flex pr-4 border-r border-white mt-1 items-center">
+                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                  <h1 className="text-xs">Bigby wolf</h1>
+                </div>
+                <div className="text-xs text-pink-500 pl-4 pt-[5px]">some time</div>
+              </div>
+            </h1>
+            <h1 className="p-2 mt-2">
+              <h1 className="text-red-500">lendi story 3</h1>
+              <h2 className="text-xs mt-[4px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
+              </h2>
+              <div className="flex mt-[2px]">
+                <div className="flex pr-4 border-r border-white mt-1 items-center">
+                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                  <h1 className="text-xs">Bigby wolf</h1>
+                </div>
+                <div className="text-xs text-pink-500 pl-4 pt-[5px]">some time</div>
+              </div>
+            </h1>
+            <h1 className="p-2 mt-2">
+              <h1 className="text-red-500">lendi story 4</h1>
+              <h2 className="text-xs mt-[4px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
+              </h2>
+              <div className="flex mt-[2px]">
+                <div className="flex pr-4 border-r border-white mt-1 items-center">
+                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
+                  <h1 className="text-xs">Bigby wolf</h1>
+                </div>
+                <div className="text-xs text-pink-500 pl-4 pt-[5px]">some time</div>
+              </div>
+            </h1>
           </div>
         </div>
         {/* <div className="w-full h-screen bg-transparent p-3">lendi</div> */}
