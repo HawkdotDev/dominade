@@ -27,6 +27,28 @@
     url("./assets/fonts/DomaineDispCondMedium.ttf") format("truetype");
   font-weight: bold;
 }
+@font-face {
+  font-family: 'Hagrid';
+  src: url('/src/assets/fonts/Hagrid-Light.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hagrid';
+  src: url('/src/assets/fonts/Hagrid-Regular.otf') format('opentype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hagrid';
+  src: url('/src/assets/fonts/Hagrid-Thin.otf') format('opentype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

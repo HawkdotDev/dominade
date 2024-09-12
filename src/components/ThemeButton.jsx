@@ -5,12 +5,11 @@ const ThemeButton = ({IsLight, setIsLight, moonIcon, sunIcon}) => {
       className="w-[35px] h-[35px] px-[1px]"
       onClick={() => {
         setIsLight(!IsLight);
-        // IsLight ? console.log("moon") : console.log("sun");
       }}
     >
       <img
         src={IsLight ? moonIcon : sunIcon}
-        alt="logo"
+        alt="theme button"
         className="w-full h-full rounded-full"
       />
     </button>

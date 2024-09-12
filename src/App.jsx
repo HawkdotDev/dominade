@@ -1,5 +1,5 @@
-import moon from "./assets/icons/moon.svg";
-import sun from "./assets/icons/sun.svg";
+import moon from "./assets/icons/dark_mode.svg";
+import sun from "./assets/icons/light_mode.svg";
 import { useRef, useState } from "react";
 // import { useGSAP } from "@gsap/react";
 // import gsap from "gsap";
@@ -7,6 +7,7 @@ import ThemeButton from "./components/ThemeButton";
 import Scroller from "./components/Scroller";
 import Footer from "./components/Footer";
 import LatestNotification from "./components/LatestNotification";
+import UpcomingCard from "./components/UpcomingCard";
 
 function App() {
   const mainRef = useRef();
@@ -15,18 +16,24 @@ function App() {
 
   // light theme
   const lightBG = "#eddccc";
-  const lightText = "#1b1b1b";
+  const lightText = "#141414";
 
   // dark theme
-  const darkBG = "#1b1b1b";
-  const darkText = "#c4bcb2";
+  const darkBG = lightText;
+  const darkText = lightBG;
 
   const border = IsLight ? lightText : "#5c5a59";
 
   const bgColor = IsLight ? lightBG : darkBG;
   const textColor = IsLight ? lightText : darkText;
 
-  const sections = ["Gaming", "Film & TV", "Esports", "Anime", "Buzz"];
+  const sections = [
+    { name: "Gaming", bgColor: "#FF4D4D" }, // Vibrant red
+    { name: "Film & TV", bgColor: "#FFD700" }, // Bright yellow
+    { name: "Esports", bgColor: "#4BFFA5" }, // Neon green
+    { name: "Anime", bgColor: "#7D5FFF" }, // Electric purple
+    { name: "Buzz", bgColor: "#FF6B81" }, // Coral pink
+  ];
 
   const emailLink = "https://www.google.com";
   const paperName = "Dominade";
@@ -59,7 +66,7 @@ function App() {
           backgroundColor: bgColor,
           color: textColor,
         }}
-        className="w-screen text-lg px-3"
+        className="w-screen text-lg px-6"
       >
         <LatestNotification
           backgroundColor={bgColor}
@@ -73,79 +80,100 @@ function App() {
             }}
             className="w-full flex justify-between items-center border-b"
           >
-            <div className="bg-transparent flex text-5xl py-1">{paperName}</div>
-            <div className="flex justify-between w-[30%] text-xl">
+            <div className="bg-transparent flex text-5xl py-[3px] text-[#e1072c]">
+              {paperName}
+            </div>
+            <div className="flex justify-between w-[30%] text-lg font-hagrid font-bold">
               <h1>Home</h1>
               <h1>Discover</h1>
               <h1>About</h1>
             </div>
-            <div className="flex gap-6 text-center px-2 cursor-pointer hover:text-blue-500">
-
-            <ThemeButton
-              IsLight={IsLight}
-              setIsLight={setIsLight}
-              moonIcon={moon}
-              sunIcon={sun}
-            />
-            <h1>
-              Login
-            </h1>
+            <div className="flex gap-6 items-center px-2 cursor-pointer hover:text-blue-500">
+              <ThemeButton
+                IsLight={IsLight}
+                setIsLight={setIsLight}
+                moonIcon={moon}
+                sunIcon={sun}
+              />
+              <h1 className="font-hagrid font-bold">Login</h1>
             </div>
           </div>
-          <div className="w-full flex items-center">
-            {sections.map((section) => (
-              <h1
-                style={{ borderColor: border }}
-                className="hover:bg-blue-500 hover:text-black w-[15%] text-center border-x py-[1px]"
-                key={section}
-              >
-                {section}
-              </h1>
-            ))}
+          <div className="w-full flex justify-between items-center">
+            <div className="w-[75%] flex items-center font-hagrid text-md py-[2px]">
+              {sections.map((section, index) => {
+                const bgcolor = section.bgColor;
+                console.log(bgColor);
+                return (
+                  <h1
+                    key={index}
+                    style={{
+                      borderColor: border,
+                      backgroundColor: bgcolor,
+                    }}
+                    className={`hover:bg-black hover:text-[#eddccc] text-black w-[20%] text-center border-l py-[1px]`}
+                  >
+                    {section.name}
+                  </h1>
+                );
+              })}
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="28px"
+              viewBox="0 -960 960 960"
+              width="28px"
+              fill={bgColor}
+              style={{ backgroundColor: textColor }}
+              className="rounded-full p-1"
+            >
+              <path d="M779.38-153.85 528.92-404.31q-30 25.54-69 39.54t-78.38 14q-96.1 0-162.67-66.53-66.56-66.53-66.56-162.57 0-96.05 66.53-162.71 66.53-66.65 162.57-66.65 96.05 0 162.71 66.56Q610.77-676.1 610.77-580q0 41.69-14.77 80.69t-38.77 66.69l250.46 250.47-28.31 28.3ZM381.54-390.77q79.61 0 134.42-54.81 54.81-54.8 54.81-134.42 0-79.62-54.81-134.42-54.81-54.81-134.42-54.81-79.62 0-134.42 54.81-54.81 54.8-54.81 134.42 0 79.62 54.81 134.42 54.8 54.81 134.42 54.81Z" />
+            </svg>
           </div>
         </nav>
         <div
           style={{ backgroundColor: textColor }}
-          className="flex w-full gap-2 overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center"
+          className="flex w-full gap-2 overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
         >
-          <div
-            style={{ borderColor: bgColor }}
-            className="w-[30vh] h-[13vh] ml-1 flex border-r"
-          >
-            <div className="bg-red-400 w-[35%] h-full"></div>
-            <div
-              style={{ color: IsLight ? darkText : lightText }}
-              className=" w-[65%] h-full text-wrap p-1"
-            >
-              <h1 className="text-xs flex justify-between mr-2 mb-[2px]">
-                <h2>date</h2>
-                <h2 className="bg-green-600 px-2">#tag</h2>
-              </h1>
-              <h1 className="text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h1>
-            </div>
-          </div>
-          <div
-            style={{ borderColor: bgColor }}
-            className="w-[30vh] h-[13vh] ml-1 flex border-r"
-          >
-            <div className="bg-blue-400 w-[35%] h-full"></div>
-            <div
-              style={{ color: IsLight ? darkText : lightText }}
-              className=" w-[65%] h-full text-wrap p-1"
-            >
-              <h1 className="text-xs flex justify-between mr-2 mb-[2px]">
-                <h2>date</h2>
-                <h2 className="bg-orange-600 px-2">#tag</h2>
-              </h1>
-              <h1 className="text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h1>
-            </div>
-          </div>
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={
+              "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/dgj1z72-b23d5b7d-2a04-4146-abbc-7e4393124ef1.png/v1/fill/w_1129,h_707/grand_theft_auto_vi___gta_6_4k_supreme_wallpaper_by_nurboyxvi_dgj1z72-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjYwNyIsInBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGdqMXo3Mi1iMjNkNWI3ZC0yYTA0LTQxNDYtYWJiYy03ZTQzOTMxMjRlZjEucG5nIiwid2lkdGgiOiI8PTQxNjEifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.K7Z-v7XQggTbd19yL14MWe8I3aptItHE7ZrjhMTR9WI"
+            }
+          />
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={
+              "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3139093-f1c4-4621-b7bc-30aeeff7178a/dhehxj7-f2e0e6a1-3f49-4b0b-914b-8d2dfd8b4804.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzMTM5MDkzLWYxYzQtNDYyMS1iN2JjLTMwYWVlZmY3MTc4YVwvZGhlaHhqNy1mMmUwZTZhMS0zZjQ5LTRiMGItOTE0Yi04ZDJkZmQ4YjQ4MDQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TefbmZN43SGyDFc2Fnt_2bp3qcN_xyFY64Yy40M9OAA"
+            }
+          />
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={"https://wallpapercave.com/wp/wp10511195.jpg"}
+          />
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={
+              "https://cdn.mos.cms.futurecdn.net/C76JswZduwNLSqNMfXvi5b-1200-80.jpg"
+            }
+          />
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={"https://i.ytimg.com/vi/5hXrQTDWyhY/maxresdefault.jpg"}
+          />
+          <UpcomingCard
+            borderColor={bgColor}
+            textColor={IsLight ? darkText : lightText}
+            imgURL={
+              "https://m.media-amazon.com/images/M/MV5BYzQ0NGZkOTMtMjMxMy00NWY0LWIxYzctZjhiZTdjZDA5OTJjXkEyXkFqcGc@._V1_.jpg"
+            }
+          />
         </div>
-        <div className="flex">
+        <div className="flex font-hagrid font-bold">
           <div
             style={{
               borderColor: border,
@@ -153,11 +181,11 @@ function App() {
             className="w-[80%] bg-transparent border-t p-3"
           >
             <div className="w-full">
-              <h1
-                // style={{ backgroundColor: textColor, color: bgColor }}
-                className="text-xl"
-              >
-                Hero Section
+              <h1 className="text-sm">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Accusantium vero optio, debitis illo laudantium obcaecati
+                doloribus, hic, blanditiis fugit expedita possimus numquam enim
+                nam iusto.
               </h1>
             </div>
           </div>
@@ -176,22 +204,6 @@ function App() {
             <h1 className="h-screen p-2">lendi stories</h1>
           </div>
         </div>
-        {/* <div style={{backgroundColor: textColor}} className="flex w-full overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center">
-            <div style={{borderColor: bgColor}} className="w-[30vh] h-[13vh] ml-1 flex border-r">
-                <div className="bg-red-400 w-[35%] h-full">
-
-                </div>
-                <div style={{color: IsLight? darkText : lightText}} className=" w-[65%] h-full text-wrap p-1">
-                    <h1 className="text-xs">
-                      some date
-                    </h1>
-                    <h1 className="text-sm">
-                      Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </h1>
-
-                </div>
-            </div>
-        </div> */}
         {/* <div className="w-full h-screen bg-transparent p-3">lendi</div> */}
         {/* <div className="w-full h-screen bg-transparent p-3">
           return of lendi

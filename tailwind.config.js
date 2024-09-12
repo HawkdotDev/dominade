@@ -9,7 +9,10 @@ export default {
       animation: {
         "infinite-scroll": "infinite-scroll 20s linear infinite",
         'move': 'move 4s linear infinite',
-      }
+      },
+      fontFamily: {
+        hagrid: ['Hagrid',],
+      },
     },
     keyframes: {
       "infinite-scroll": {
