@@ -1,0 +1,14 @@
+.section-item {
+    border-left: 1px solid #000; /* Example border color */
+    padding: 1px;
+    text-align: center;
+    width: 20%;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
+  }
+  
+  .section-item:hover {
+    background-color: var(--hover-color);
+    color: #000;
+  }
+  

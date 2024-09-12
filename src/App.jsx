@@ -8,6 +8,7 @@ import Scroller from "./components/Scroller";
 import Footer from "./components/Footer";
 import LatestNotification from "./components/LatestNotification";
 import UpcomingCard from "./components/UpcomingCard";
+import "./SectionList.css";
 
 function App() {
   const mainRef = useRef();
@@ -103,16 +104,15 @@ function App() {
           <div className="w-full flex justify-between items-center">
             <div className="w-[75%] flex items-center font-hagrid text-md py-[2px]">
               {sections.map((section, index) => {
-                const bgcolor = section.bgColor;
-                console.log(bgColor);
+                const hoverColor = section.bgColor;
                 return (
                   <h1
                     key={index}
                     style={{
-                      borderColor: border,
-                      backgroundColor: bgcolor,
+                      "--hover-color": hoverColor,
+                      borderColor: textColor,
                     }}
-                    className={`hover:bg-black hover:text-[#eddccc] text-black w-[20%] text-center border-l py-[1px]`}
+                    className="section-item border-l"
                   >
                     {section.name}
                   </h1>
@@ -188,19 +188,23 @@ function App() {
             }}
             className="w-[80%] bg-transparent border-t"
           >
-            <div className="w-full h-[63%] bg-red-400">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
-              laborum nam consectetur, impedit nobis quo aperiam nihil eius
-              animi dolore officiis harum, temporibus sapiente molestiae illo
-              officia repellat accusantium assumenda itaque ad mollitia numquam
-              dolores quibusdam. Necessitatibus, sed! Ducimus cumque asperiores
-              laudantium corrupti voluptatum alias? Fugit sit nemo adipisci
-              quasi autem veniam itaque ullam asperiores, provident soluta id
-              earum odit, ducimus eveniet corporis tempore? At dolor hic magnam,
-              adipisci animi veritatis cumque provident voluptatum aspernatur
-              sapiente quibusdam consequuntur accusantium quidem, exercitationem
-              distinctio quis placeat minima. Magnam aut accusantium, inventore
-              saepe est sapiente et vitae, fugiat odit, quae voluptatum hic!
+            <div className="w-full h-[63.3%] pt-1">
+              <h1 className="text-3xl font-bold h-[7%]">
+                Editors Pick
+              </h1>
+              <div className="h-[93%] w-[99.5%]">
+                <div className="flex w-full h-[49.5%] justify-between">
+                  <div className="w-[46%] bg-white">
+
+                  </div>
+                  <div className="w-[26.5%] bg-emerald-400">
+
+                  </div>
+                  <div className="w-[26.5%] bg-emerald-400">
+
+                  </div>
+                </div>
+              </div>
             </div>
             {/* <h1 className="text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -217,7 +221,7 @@ function App() {
           >
             <h1
               style={{ backgroundColor: bgColor, color: textColor }}
-              className="text-4xl py-1 px-2"
+              className="text-3xl py-1 px-2 font-bold"
             >
               Trending
             </h1>

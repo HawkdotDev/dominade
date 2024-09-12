@@ -38,6 +38,12 @@
   font-family: 'Hagrid';
   src: url('/src/assets/fonts/Hagrid-Regular.otf') format('opentype');
   font-weight: 700; /* Bold */
+  font-style: thin;
+}
+@font-face {
+  font-family: 'Hagrid';
+  src: url('/src/assets/fonts/HagridText-Bold.otf') format('opentype');
+  font-weight: 800; /* extraBold */
   font-style: normal;
 }
 
