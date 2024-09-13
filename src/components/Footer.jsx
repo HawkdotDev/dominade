@@ -7,7 +7,7 @@ const Footer = ({textColor, bgColor, border}) => {
       }}
       className="w-full flex justify-center p-2 border-t"
     >
-      Made with ❤️ by
+      Brought to you by
       <a
         href="https://github.com/HawkdotDev"
         target="_blank"
@@ -15,10 +15,11 @@ const Footer = ({textColor, bgColor, border}) => {
           backgroundColor: textColor,
           color: bgColor,
         }}
-        className="ml-[6px] px-[5px]"
+        className="mx-[6px] px-[5px]"
       >
-        HawkdotDev
+        Dominade 
       </a>
+       with ❤️
     </div>
   );
 };
