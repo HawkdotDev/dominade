@@ -3,13 +3,13 @@
 const LatestNotification = ({color, backgroundColor, border }) => {
   return (
     <div style={{borderColor: border, backgroundColor: backgroundColor}} className="w-full font-hagrid font-medium flex items-center py-[1px] sticky top-0 border-b z-50">
-      <div style={{color: backgroundColor}} className="px-2 w-[8%] bg-pink-600 mb-[2px] text-center">Latest</div>
+      <div style={{color: backgroundColor}} className="px-2 w-[8%] bg-emerald-400 mb-[2px] text-center">Latest</div>
       <div style={{borderColor: border}} className="w-[82%] flex flex-nowrap overflow-hidden relative border-r">
         <ul className="flex items-center animate-infinite-scroll w-full justify-evenly">
-          <li className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident culpa debitis id cum quibusdam distinctio.</li>
+          <li className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident culpa debitis.</li>
         </ul>
         <ul style={{borderColor: border}} className="flex items-center animate-infinite-scroll absolute top-0 left-full w-full justify-evenly border-x ">
-        <li className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident culpa debitis id cum quibusdam distinctio.</li>
+        <li className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident culpa debitis.</li>
         </ul>
       </div>
       <div className="w-[10%] flex justify-evenly items-center">

@@ -12,6 +12,8 @@ export default {
       },
       fontFamily: {
         hagrid: ['Hagrid',],
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'], // 'ui-serif', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       },
     },
     keyframes: {
