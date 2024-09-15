@@ -69,7 +69,7 @@ const MasoneryLayout = () => {
           <div
             key={index}
             style={{backgroundColor: getRandomNeonColor()}}
-            className="mb-4 rounded-lg shadow-md break-inside-avoid"
+            className="mb-4 rounded-sm shadow-md break-inside-avoid"
           >
             <img
               src={image}

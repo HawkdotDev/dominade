@@ -1,15 +1,19 @@
 import moon from "./assets/icons/dark_mode.svg";
 import sun from "./assets/icons/light_mode.svg";
 import { useRef, useState } from "react";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
 import ThemeButton from "./components/ThemeButton";
 import Scroller from "./components/Scroller";
 import Footer from "./components/Footer";
 import LatestNotification from "./components/LatestNotification";
 import UpcomingCard from "./components/UpcomingCard";
 import "./SectionList.css";
-import MasoneryLayout from "./components/MasoneryLayout";
+// import MasoneryLayout from "./components/MasoneryLayout";
+
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Discover from "./pages/Discover";
+import About from "./pages/About";
+import Authors from "./pages/Authors";
 
 function App() {
   const mainRef = useRef();
@@ -26,8 +30,8 @@ function App() {
 
   const border = "#5c5a59"; // IsLight ? lightText :
 
-  const bgColor = IsLight ? lightBG : darkBG;
-  const textColor = IsLight ? lightText : darkText;
+  const bgColor = darkBG;
+  const textColor = darkText;
 
   const sections = [
     { name: "Gaming", bgColor: "#FF4D4D" }, // Vibrant red
@@ -40,28 +44,9 @@ function App() {
   const emailLink = "https://www.google.com";
   const paperName = "Dominade";
 
-  // const tl = gsap.timeline();
-
-  // useGSAP(() => {
-  //   tl.to(mainRef.current, {
-  //     y: "100vh",
-  //     scale: 0.5,
-  //     duration: 0.1,
-  //     delay: 0.1,
-  //   })
-  //     .to(mainRef.current, {
-  //       y: "-70vh",
-  //       duration: 1,
-  //     })
-  //     .to(mainRef.current, {
-  //       y: 0,
-  //       duration: 1,
-  //       scale: 1,
-  //     });
-  // });
-
   return (
     <>
+    <Router basename="/dominade">
       <main
         ref={mainRef}
         style={{
@@ -70,7 +55,7 @@ function App() {
         }}
         className="w-screen text-lg px-6 flex flex-col items-center"
       >
-        <div className="w-[92.5%]">
+        <div className="w-[92.5%] container">
           <LatestNotification
             backgroundColor={bgColor}
             color={textColor}
@@ -93,10 +78,27 @@ function App() {
                 {paperName}
               </div>
               <div className="flex justify-between w-[35%] text-lg font-hagrid font-bold">
-                <h1 className="hover:text-emerald-400 cursor-pointer">Home</h1>
-                <h1 className="hover:text-emerald-400 cursor-pointer">Discover</h1>
-                <h1 className="hover:text-emerald-400 cursor-pointer">About</h1>
-                <h1 className="hover:text-emerald-400 cursor-pointer">Authors</h1>
+                <Link to="/" className="hover:text-emerald-400 cursor-pointer">
+                  Home
+                </Link>
+                <Link
+                  to="/discover"
+                  className="hover:text-emerald-400 cursor-pointer"
+                >
+                  Discover
+                </Link>
+                <Link
+                  to="/about"
+                  className="hover:text-emerald-400 cursor-pointer"
+                >
+                  About
+                </Link>
+                <Link
+                  to="/authors"
+                  className="hover:text-emerald-400 cursor-pointer"
+                >
+                  Authors
+                </Link>
               </div>
               <div className="flex gap-6 items-center px-2">
                 <ThemeButton
@@ -127,20 +129,6 @@ function App() {
                     </h1>
                   );
                 })}
-                {/* {sections.map((section, index) => {
-                return (
-                  <h1
-                    key={index}
-                    style={{
-                      borderColor: textColor,
-                      backgroundColor: section.bgColor,
-                    }}
-                    className="section-item border-l text-black"
-                  >
-                    {section.name}
-                  </h1>
-                );
-              })} */}
               </div>
               <div
                 style={{ backgroundColor: textColor }}
@@ -216,7 +204,8 @@ function App() {
               }
             />
           </div>
-          <div className="flex font-hagrid font-bold w-full pt-3">
+
+          {/* <div className="flex font-hagrid font-bold w-full pt-3">
             <div
               style={{
                 borderColor: border,
@@ -588,15 +577,23 @@ function App() {
               <MasoneryLayout />
             </div>
             <div className="w-[20%] h-[60vh]"></div>
-          </div>
+          </div> */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/discover" element={<Discover />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/authors" element={<Authors />} />
+            </Routes>
+
           <Scroller
             bgColor={bgColor}
             textColor={textColor}
             emailLink={emailLink}
-          />
+            />
           <Footer bgColor={bgColor} textColor={textColor} border={border} />
         </div>
       </main>
+            </Router>
     </>
   );
 }
