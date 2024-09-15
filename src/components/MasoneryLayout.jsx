@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import Masonry from 'react-masonry-css';
+import { useState } from "react";
+import Masonry from "react-masonry-css";
 
 const getRandomNeonColor = () => {
-    const neonColors = [
-      '#39FF14', // Neon Green
-      '#FF073A', // Neon Red
-      '#1D2D50', // Neon Blue
-      '#FF00FF', // Neon Purple
-      '#00FFFF', // Neon Cyan
-      '#FFFF00', // Neon Yellow
-      '#FF6F61', // Neon Coral
-      '#E8A87C', // Neon Peach
-    ];
-    return neonColors[Math.floor(Math.random() * neonColors.length)];
-  };
+  const neonColors = [
+    "#071952",
+    "#0B666A",
+    "#35A29F",
+    "#4F1787",
+    "#AF47D2",
+    "#492E87"
+  ];
+
+  return neonColors[Math.floor(Math.random() * neonColors.length)];
+};
 
 // Function to generate random dimensions for the cards
 const getRandomDimensions = () => {
@@ -35,7 +34,9 @@ const generateImages = (count) => {
   return Array.from({ length: count }).map(() => {
     // Randomly decide between normal size or special size
     const isSpecial = Math.random() > 0.7; // 30% chance to be special size
-    const { width, height } = isSpecial ? getSpecialDimensions() : getRandomDimensions();
+    const { width, height } = isSpecial
+      ? getSpecialDimensions()
+      : getRandomDimensions();
     return `https://via.placeholder.com/${width}x${height}`;
   });
 };
@@ -47,14 +48,14 @@ const MasoneryLayout = () => {
 
   // Function to load more images
   const loadMoreImages = () => {
-    setImages(prevImages => [...prevImages, ...additionalImages]);
+    setImages((prevImages) => [...prevImages, ...additionalImages]);
   };
 
   // Define the number of columns based on the screen width using breakpoints
   const breakpointColumnsObj = {
-    default: 4,  
-    1024: 3,     
-    768: 2,      
+    default: 4,
+    1024: 3,
+    768: 2,
     500: 1,
   };
 
@@ -68,7 +69,7 @@ const MasoneryLayout = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            style={{backgroundColor: getRandomNeonColor()}}
+            style={{ backgroundColor: getRandomNeonColor() }}
             className="mb-4 rounded-sm shadow-md break-inside-avoid"
           >
             <img
@@ -80,8 +81,8 @@ const MasoneryLayout = () => {
         ))}
       </Masonry>
       <div className="w-full h-8 flex justify-center mt-4">
-        <button 
-          className="bg-red-400 px-3 text-black rounded" 
+        <button
+          className="bg-red-400 px-3 text-black rounded"
           onClick={loadMoreImages}
         >
           Load More

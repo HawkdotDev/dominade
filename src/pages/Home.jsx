@@ -320,7 +320,7 @@ const Home = () => {
           <div className="pl-[12px]">
             <h1 className="px-1 py-[2px] mt-[2px]">
               <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto">
+              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
                 ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
               </h2>
@@ -336,7 +336,7 @@ const Home = () => {
             </h1>
             <h1 className="px-1 py-[2px] mt-2">
               <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto">
+              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
                 ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
               </h2>
@@ -352,7 +352,7 @@ const Home = () => {
             </h1>
             <h1 className="px-1 py-[2px] mt-2">
               <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto">
+              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
                 ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
               </h2>
