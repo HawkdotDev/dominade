@@ -13,7 +13,7 @@ import "./SectionList.css";
 function App() {
   const mainRef = useRef();
   const navRef = useRef();
-  const [IsLight, setIsLight] = useState(true);
+  const [IsLight, setIsLight] = useState(false);
 
   // light theme
   const lightBG = "#eddccc";
