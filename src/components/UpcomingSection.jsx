@@ -7,13 +7,15 @@ const UpcomingSection = () => {
   return (
     <>
       <div className="flex mt-1 items-center justify-between">
-        <h1 className="font-hagrid font-bold">Upcoming</h1>
+        <h1 className="font-hagrid font-bold text-[#fc116b]">Upcoming</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
           viewBox="0 -960 960 960"
           width="24px"
           fill="#e8eaed"
+          className="mb-[2px]"
+        //   className="bg-slate-800 rounded-full text-center mb-[2px] border border-gray-700"
         >
           <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
         </svg>
