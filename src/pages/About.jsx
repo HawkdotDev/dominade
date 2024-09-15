@@ -63,7 +63,7 @@ const About = () => {
 
       {/* Meet the Team Section */}
       <div className="max-w-7xl mx-auto mt-12 text-center">
-        <h2 className="text-4xl font-bold text-neon-yellow mb-12">
+        <h2 className="text-4xl font-bold text-neon-yellow mb-5 font-hagrid">
           Meet the Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -115,7 +115,7 @@ const About = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-24 text-center">
+      <div className="mt-8 text-center">
         <a
           href="/contact"
           className="text-2xl text-neon-pink border border-neon-pink px-6 py-3 rounded-md hover:bg-neon-pink hover:text-white text-emerald-400 transition-colors duration-300"

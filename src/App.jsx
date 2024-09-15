@@ -10,9 +10,15 @@ import "./SectionList.css";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Discover from "./pages/Discover";
+// import Discover from "./pages/Discover";
+import Tags from "./pages/Tags"
 import About from "./pages/About";
 import Authors from "./pages/Authors";
+import Anime from "./pages/categories/Anime";
+import Esports from "./pages/categories/Esports";
+import Buzz from "./pages/categories/Buzz";
+import Gaming from "./pages/categories/Gaming";
+import FilmandTv from "./pages/categories/FilmandTv";
 
 function App() {
   const mainRef = useRef();
@@ -84,10 +90,10 @@ function App() {
                     Home
                   </Link>
                   <Link
-                    to="/discover"
+                    to="/tags"
                     className="hover:text-emerald-400 cursor-pointer"
                   >
-                    Discover
+                    Tags
                   </Link>
                   <Link
                     to="/about"
@@ -118,18 +124,36 @@ function App() {
                 <div className="w-[75%] flex items-center font-hagrid text-md py-[2px]">
                   {sections.map((section, index) => {
                     const hoverColor = section.bgColor;
-                    return (
-                      <h1
-                        key={index}
-                        style={{
-                          "--hover-color": hoverColor,
-                          // borderColor: textColor,
-                        }}
-                        className="section-item border-l border-gray-600"
-                      >
-                        {section.name}
-                      </h1>
-                    );
+                    if(section.name == "Film & TV"){
+                      return (
+                        <Link
+                          to={`/Film-and-TV`}
+                          key={index}
+                          style={{
+                            "--hover-color": hoverColor,
+                            // borderColor: textColor,
+                          }}
+                          className="section-item border-l border-gray-600"
+                        >
+                          {section.name}
+                        </Link>
+                      );
+                    }else{
+
+                      return (
+                        <Link
+                          to={`/${section.name}`}
+                          key={index}
+                          style={{
+                            "--hover-color": hoverColor,
+                            // borderColor: textColor,
+                          }}
+                          className="section-item border-l border-gray-600"
+                        >
+                          {section.name}
+                        </Link>
+                      );
+                    }
                   })}
                 </div>
                 <div
@@ -157,9 +181,15 @@ function App() {
             </nav>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/discover" element={<Discover />} />
+              <Route path="/tags" element={<Tags />} />
               <Route path="/about" element={<About />} />
               <Route path="/authors" element={<Authors />} />
+
+              <Route path="/Anime" element={<Anime />} />
+              <Route path="/Esports" element={<Esports />} />
+              <Route path="/Buzz" element={<Buzz />} />
+              <Route path="/Gaming" element={<Gaming />} />
+              <Route path="/Film-and-TV" element={<FilmandTv />} />
             </Routes>
 
             <Scroller
