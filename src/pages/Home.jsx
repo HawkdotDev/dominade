@@ -1,13 +1,14 @@
-
 import MasoneryLayout from "../components/MasoneryLayout";
+import UpcomingSection from "../components/UpcomingSection";
 
 const Home = () => {
-    const border = "#5c5a59";
+  const border = "#5c5a59";
 
   const bgColor = "#141414";
   const textColor = "#eddccc";
   return (
     <>
+    <UpcomingSection />
       <div className="flex font-hagrid font-bold w-full pt-3">
         <div
           style={{

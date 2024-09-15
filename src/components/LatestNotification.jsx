@@ -4,7 +4,7 @@ const LatestNotification = ({color, backgroundColor, border }) => {
   return (
     <div style={{borderColor: border, backgroundColor: backgroundColor}} className="w-full font-hagrid font-medium flex items-center py-[1px] sticky top-0 border-b z-50">
       <div style={{color: backgroundColor}} className="px-2 w-[8%] bg-emerald-400 mb-[2px] text-center">Latest</div>
-      <div style={{borderColor: border}} className="w-[82%] flex flex-nowrap overflow-hidden relative border-r">
+      <div style={{borderColor: border}} className="w-[82%] flex flex-nowrap overflow-hidden relative border-r text-sm">
         <ul className="flex items-center animate-infinite-scroll w-full justify-evenly">
           <li className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, provident culpa debitis.</li>
         </ul>
