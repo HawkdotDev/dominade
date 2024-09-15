@@ -17,7 +17,7 @@ const Home = () => {
         >
           <div className="w-full h-[63.3%] pt-1 mt-2 mb-[5px]">
             <div className="h-[7%] w-[98%] flex justify-between mb-2">
-              <h1 className="text-3xl font-bold">Editors Pick</h1>
+              <h1 className="text-3xl font-bold">Featured</h1>
               <button
                 onClick={() => {
                   alert("maybe some other time! boss is sleeping.");
