@@ -16,14 +16,14 @@ function App() {
   const [IsLight, setIsLight] = useState(false);
 
   // light theme
-  const lightBG = "#eddccc";
-  const lightText = "#141414";
+  const lightBG =  "#141414"  //"#eddccc";
+  const lightText =  "#eddccc" //"#141414";
 
   // dark theme
-  const darkBG = lightText;
-  const darkText = lightBG;
+  const darkBG = lightBG;
+  const darkText = lightText;
 
-  const border = IsLight ? lightText : "#5c5a59";
+  const border = "#5c5a59"; // IsLight ? lightText : 
 
   const bgColor = IsLight ? lightBG : darkBG;
   const textColor = IsLight ? lightText : darkText;
