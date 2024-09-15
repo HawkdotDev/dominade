@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import LatestNotification from "./components/LatestNotification";
 import UpcomingCard from "./components/UpcomingCard";
 import "./SectionList.css";
+import MasoneryLayout from "./components/MasoneryLayout";
 
 function App() {
   const mainRef = useRef();
@@ -16,14 +17,14 @@ function App() {
   const [IsLight, setIsLight] = useState(false);
 
   // light theme
-  const lightBG =  "#141414"  //"#eddccc";
-  const lightText =  "#eddccc" //"#141414";
+  const lightBG = "#141414"; //"#eddccc";
+  const lightText = "#eddccc"; //"#141414";
 
   // dark theme
   const darkBG = lightBG;
   const darkText = lightText;
 
-  const border = "#5c5a59"; // IsLight ? lightText : 
+  const border = "#5c5a59"; // IsLight ? lightText :
 
   const bgColor = IsLight ? lightBG : darkBG;
   const textColor = IsLight ? lightText : darkText;
@@ -88,13 +89,14 @@ function App() {
               }}
               className="w-full flex justify-between items-center border-b"
             >
-              <div className="bg-transparent flex text-5xl py-[3px] text-[#fc116b]">
+              <div className="bg-transparent flex text-5xl py-[3px] text-[#fc116b] cursor-pointer">
                 {paperName}
               </div>
-              <div className="flex justify-between w-[30%] text-lg font-hagrid font-bold">
-                <h1>Home</h1>
-                <h1>Discover</h1>
-                <h1>About</h1>
+              <div className="flex justify-between w-[35%] text-lg font-hagrid font-bold">
+                <h1 className="hover:text-emerald-400 cursor-pointer">Home</h1>
+                <h1 className="hover:text-emerald-400 cursor-pointer">Discover</h1>
+                <h1 className="hover:text-emerald-400 cursor-pointer">About</h1>
+                <h1 className="hover:text-emerald-400 cursor-pointer">Authors</h1>
               </div>
               <div className="flex gap-6 items-center px-2">
                 <ThemeButton
@@ -582,20 +584,11 @@ function App() {
             </div>
           </div>
           <div className="w-full flex mt-1">
-            <div className="w-[80%] h-full"></div>
-            <div className="w-[20%] h-[60vh] border-l"></div>
+            <div className="w-[80%] h-full border-r pb-2">
+              <MasoneryLayout />
+            </div>
+            <div className="w-[20%] h-[60vh]"></div>
           </div>
-          {/* <div className="w-full h-screen bg-transparent p-3">
-          return of lendi
-        </div>
-        <div
-          style={{
-            borderColor: border,
-          }}
-          className="w-full h-screen bg-transparent p-3"
-        >
-          the last lendi
-        </div> */}
           <Scroller
             bgColor={bgColor}
             textColor={textColor}

@@ -17,7 +17,7 @@ const UpcomingCard = ({ borderColor, imgURL, textColor, tagBG }) => {
         />
       </div>
       <div
-        style={{ color: textColor }}
+        style={{ color: borderColor }} // textColor
         className=" w-[65%] h-full text-wrap p-1 ml-[2px] flex flex-col justify-between"
       >
         <h1
