@@ -15,14 +15,14 @@ const UpcomingSection = () => {
           width="24px"
           fill="#e8eaed"
           className="mb-[2px]"
-        //   className="bg-slate-800 rounded-full text-center mb-[2px] border border-gray-700"
+          //   className="bg-slate-800 rounded-full text-center mb-[2px] border border-gray-700"
         >
           <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
         </svg>
       </div>
       <div
         // style={{ backgroundColor: textColor }}
-        className="flex w-full bg-emerald-400 gap-3 overflow-auto whitespace-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
+        className="flex w-full bg-emerald-400 gap-3 overflow-auto flex-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
       >
         <UpcomingCard
           tagBG={"#23eb55"}
@@ -44,7 +44,7 @@ const UpcomingSection = () => {
           tagBG={"#ffffff"}
           borderColor={bgColor}
           textColor={textColor}
-          imgURL={"https://wallpapercave.com/wp/wp10511195.jpg"}
+          imgURL={"https://yattatachi.com/wp-content/uploads/2023/12/Great-Pretender-Razbliuto-poster.jpg"}
         />
         <UpcomingCard
           tagBG={"#f20f62"}
@@ -63,11 +63,27 @@ const UpcomingSection = () => {
           }
         />
         <UpcomingCard
+          tagBG={"#23eb55"}
+          borderColor={bgColor}
+          textColor={textColor}
+          imgURL={
+            "https://yattatachi.com/wp-content/uploads/2024/03/the-boy-and-the-beast-poster-725x1024.jpg"
+          }
+        />
+        <UpcomingCard
           tagBG={"#e3df0e"}
           borderColor={bgColor}
           textColor={textColor}
           imgURL={
             "https://m.media-amazon.com/images/M/MV5BYzQ0NGZkOTMtMjMxMy00NWY0LWIxYzctZjhiZTdjZDA5OTJjXkEyXkFqcGc@._V1_.jpg"
+          }
+        />
+        <UpcomingCard
+          tagBG={"#23eb55"}
+          borderColor={bgColor}
+          textColor={textColor}
+          imgURL={
+            "https://wallpapercave.com/wp/wp10511195.jpg"
           }
         />
       </div>

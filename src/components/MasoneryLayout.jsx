@@ -8,7 +8,7 @@ const getRandomNeonColor = () => {
     "#35A29F",
     "#4F1787",
     "#AF47D2",
-    "#492E87"
+    "#492E87",
   ];
 
   return neonColors[Math.floor(Math.random() * neonColors.length)];
@@ -69,14 +69,27 @@ const MasoneryLayout = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            style={{ backgroundColor: getRandomNeonColor() }}
-            className="mb-4 rounded-sm shadow-md break-inside-avoid"
+            // style={{ backgroundColor: getRandomNeonColor() }}
+            className="mb-4 rounded-sm shadow-md break-inside-avoid relative bg-gray-800"
           >
             <img
               src={image}
               alt={`Masonry item ${index}`}
               className="w-full h-auto object-cover rounded-lg opacity-0"
             />
+            <div className="absolute top-0 flex flex-col justify-between left-0 w-full h-full rounded-lg">
+              <h1
+                style={{ backgroundColor: getRandomNeonColor() }}
+                className="w-[28%] pl-1 m-2"
+              >
+                #random
+              </h1>
+              <div className="bottom-0 w-full h-[35%] bg-slate-700">
+                <h1 className="p-2 text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem.
+                </h1>
+              </div>
+            </div>
           </div>
         ))}
       </Masonry>

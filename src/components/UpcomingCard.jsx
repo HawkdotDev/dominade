@@ -4,7 +4,7 @@ const UpcomingCard = ({ borderColor, imgURL, textColor, tagBG }) => {
   return (
     <div
       style={{ borderColor: borderColor }}
-      className="w-[30vh] ml-3 h-[13vh] flex border-r"
+      className="w-[13vw] ml-3 h-[13vh] flex border-r flex-grow-0 flex-shrink-0 basis-auto"
     >
       <div
         style={{ borderColor: borderColor }}
@@ -25,11 +25,8 @@ const UpcomingCard = ({ borderColor, imgURL, textColor, tagBG }) => {
           className="flex justify-between mr-2"
         >
           <h2 style={{fontWeight: 900, fontSize: "11px"}} className="text-[#FC116B]">12 pm</h2>
-          {/* <h2 style={{ backgroundColor: tagBG }} className="px-2 text-black">
-            #tag
-          </h2> */}
         </h1>
-        <h1 className="text-xs hover:text-purple-700">
+        <h1 className="text-xs hover:text-purple-700 cursor-pointer">
           Lorem ipsum dolor sit amet consectetur adipisicing.
         </h1>
       </div>

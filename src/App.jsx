@@ -71,7 +71,7 @@ function App() {
               style={{
                 backgroundColor: bgColor,
               }}
-              className="w-full sticky top-[32.5px] z-[99]"
+              className="w-full z-[99]"
             >
               <div
                 style={{
@@ -158,12 +158,12 @@ function App() {
                 </div>
                 <div
                   style={{ backgroundColor: textColor }}
-                  className="w-[22.5%] h-[26px] flex justify-end"
+                  className="w-[22.5%] h-[30px] flex justify-end"
                 >
                   <input
                     type="text"
                     placeholder="Search"
-                    className="w-full h-full px-2 bg-transparent text-black outline-none font-hagrid text-sm pl-5"
+                    className="w-full h-full px-[3px] bg-transparent text-black outline-none text-md pl-2 font-hagrid"
                     style={{ color: bgColor }}
                   />
                   <svg
