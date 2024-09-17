@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line react/prop-types
 const Footer = ({textColor, bgColor, border}) => {
   return (
@@ -12,7 +13,7 @@ const Footer = ({textColor, bgColor, border}) => {
         href="https://github.com/HawkdotDev"
         target="_blank"
         style={{
-          backgroundColor: textColor,
+          backgroundColor: "red",
           color: bgColor,
         }}
         className="mx-[6px] px-[5px]"

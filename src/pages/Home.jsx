@@ -14,7 +14,7 @@ const Home = () => {
           style={{
             borderColor: border,
           }}
-          className="w-[80%] bg-transparent"
+          className="w-[77.5%] bg-transparent"
         >
           <div className="w-full h-[63.3%] pt-1 mt-2 mb-[5px]">
             <div className="h-[7%] w-[98%] flex justify-between mb-2">
@@ -310,7 +310,7 @@ const Home = () => {
           style={{
             borderColor: border,
           }}
-          className="w-[20%] bg-transparent relative border-l"
+          className="w-[22.5%] bg-transparent relative border-l"
         >
           <h1
             style={{ backgroundColor: bgColor, color: textColor }}
@@ -374,10 +374,10 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full flex mt-1">
-        <div className="w-[80%] h-full border-r pb-2">
+        <div className="w-[77.6%] h-full border-r border-gray-600 pb-2">
           <MasoneryLayout />
         </div>
-        <div className="w-[20%] h-[60vh]"></div>
+        <div className="w-[22.4%] h-[60vh]"></div>
       </div>
     </>
   );

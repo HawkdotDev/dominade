@@ -94,9 +94,8 @@
 #scroller h1{
   font-family: domain;
   font-weight: 100;
-  font-size: 60px;
+  font-size: 65px;
   display: inline-block;
-  /* color: #222; */
   margin-right: 10px; 
   animation-name: move;
   animation-duration: 4s;

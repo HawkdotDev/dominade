@@ -3,26 +3,26 @@ const Scroller = ({textColor, bgColor, emailLink}) => {
   return (
     <div id="scroller" style={{borderColor: textColor}} className="border-t">
       <h1>
-        Lets create something together{" "}
+        Signup to the {"  "}
         <span style={{ backgroundColor: textColor, color: bgColor }}>
           <a href={emailLink} target="_blank">
-            MAIL ME
+            News Letter
           </a>
         </span>
       </h1>
       <h1>
-        Lets create something together{" "}
+        Signup to the {"  "}
         <span style={{ backgroundColor: textColor, color: bgColor }}>
           <a href={emailLink} target="_blank">
-            MAIL ME
+            News Letter
           </a>
         </span>
       </h1>
       <h1>
-        Lets create something together{" "}
+        Signup to the {" "}
         <span style={{ backgroundColor: textColor, color: bgColor }}>
           <a href={emailLink} target="_blank">
-            MAIL ME
+            News Letter
           </a>
         </span>
       </h1>

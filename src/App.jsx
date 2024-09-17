@@ -1,7 +1,3 @@
-import moon from "./assets/icons/dark_mode.svg";
-import sun from "./assets/icons/light_mode.svg";
-import { useRef, useState } from "react";
-import ThemeButton from "./components/ThemeButton";
 import Scroller from "./components/Scroller";
 import Footer from "./components/Footer";
 import LatestNotification from "./components/LatestNotification";
@@ -11,7 +7,7 @@ import "./SectionList.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 // import Discover from "./pages/Discover";
-import Tags from "./pages/Tags"
+import Tags from "./pages/Tags";
 import About from "./pages/About";
 import Authors from "./pages/Authors";
 import Anime from "./pages/categories/Anime";
@@ -21,10 +17,6 @@ import Gaming from "./pages/categories/Gaming";
 import FilmandTv from "./pages/categories/FilmandTv";
 
 function App() {
-  const mainRef = useRef();
-  const navRef = useRef();
-  const [IsLight, setIsLight] = useState(false);
-
   // light theme
   const lightBG = "#141414"; //"#eddccc";
   const lightText = "#eddccc"; //"#141414";
@@ -53,7 +45,6 @@ function App() {
     <>
       <Router basename="/dominade">
         <main
-          ref={mainRef}
           style={{
             backgroundColor: bgColor,
             color: textColor,
@@ -67,11 +58,10 @@ function App() {
               border={border}
             />
             <nav
-              ref={navRef}
               style={{
                 backgroundColor: bgColor,
               }}
-              className="w-full z-[99]"
+              className="w-full sticky top-0 z-[100]"
             >
               <div
                 style={{
@@ -79,52 +69,60 @@ function App() {
                 }}
                 className="w-full flex justify-between items-center border-b"
               >
-                <div className="bg-transparent flex text-5xl py-[3px] text-[#fc116b] cursor-pointer">
+                <Link
+                  to={"/"}
+                  className="bg-transparent flex text-5xl py-[3px] text-[#fc116b] cursor-pointer"
+                >
                   {paperName}
-                </div>
-                <div className="flex justify-between w-[35%] text-lg font-hagrid font-bold">
-                  <Link
-                    to="/"
-                    className="hover:text-emerald-400 cursor-pointer"
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    to="/tags"
-                    className="hover:text-emerald-400 cursor-pointer"
-                  >
-                    Tags
-                  </Link>
-                  <Link
-                    to="/about"
-                    className="hover:text-emerald-400 cursor-pointer"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    to="/authors"
-                    className="hover:text-emerald-400 cursor-pointer"
-                  >
-                    Authors
-                  </Link>
-                </div>
-                <div className="flex gap-6 items-center px-2">
-                  <ThemeButton
-                    IsLight={IsLight}
-                    setIsLight={setIsLight}
-                    moonIcon={moon}
-                    sunIcon={sun}
-                  />
-                  <h1 className="font-hagrid font-bold text-pink-600 cursor-pointer hover:text-blue-500">
-                    Login
-                  </h1>
+                </Link>
+                <div className="w-[70%] flex justify-end">
+                  <div className="flex justify-between items-center w-[80%] text-lg font-hagrid font-bold">
+                    {sections.map((section, index) => {
+                      const hoverColor = section.bgColor;
+                      return (
+                        <Link
+                          to={
+                            section.name === "Film & TV"
+                              ? `/Film-and-TV`
+                              : `/${section.name}`
+                          }
+                          key={index}
+                          style={{
+                            "--hover-color": hoverColor,
+                          }}
+                          className="section-item border-l border-gray-600"
+                        >
+                          {section.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  <div className="flex items-center border-l border-gray-500 w-[20%] justify-between">
+                    <div className="flex font-hagrid items-center cursor-pointer hover:bg-purple-500 hover:text-black w-[55%] h-[30px] justify-center pl-2">
+                      <h1>More</h1>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="34px"
+                        viewBox="0 -960 960 960"
+                        width="34px"
+                        fill="#e8eaed"
+                        className="mb-[2px]"
+                      >
+                        <path d="M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z"/>
+                      </svg>
+                    </div>
+                    <h1 className="font-hagrid font-bold text-pink-600 cursor-pointer w-[45%] text-center hover:text-blue-500">
+                      Login
+                    </h1>
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex justify-between items-center bg-neutral-800 border-b border-gray-500">
+
+              {/* <div className="w-full flex justify-between items-center bg-neutral-800 border-b border-gray-500">
                 <div className="w-[75%] flex items-center font-hagrid text-md py-[2px]">
                   {sections.map((section, index) => {
                     const hoverColor = section.bgColor;
-                    if(section.name == "Film & TV"){
+                    if (section.name == "Film & TV") {
                       return (
                         <Link
                           to={`/Film-and-TV`}
@@ -138,8 +136,7 @@ function App() {
                           {section.name}
                         </Link>
                       );
-                    }else{
-
+                    } else {
                       return (
                         <Link
                           to={`/${section.name}`}
@@ -177,7 +174,7 @@ function App() {
                     <path d="M779.38-153.85 528.92-404.31q-30 25.54-69 39.54t-78.38 14q-96.1 0-162.67-66.53-66.56-66.53-66.56-162.57 0-96.05 66.53-162.71 66.53-66.65 162.57-66.65 96.05 0 162.71 66.56Q610.77-676.1 610.77-580q0 41.69-14.77 80.69t-38.77 66.69l250.46 250.47-28.31 28.3ZM381.54-390.77q79.61 0 134.42-54.81 54.81-54.8 54.81-134.42 0-79.62-54.81-134.42-54.81-54.81-134.42-54.81-79.62 0-134.42 54.81-54.81 54.8-54.81 134.42 0 79.62 54.81 134.42 54.8 54.81 134.42 54.81Z" />
                   </svg>
                 </div>
-              </div>
+              </div> */}
             </nav>
             <Routes>
               <Route path="/" element={<Home />} />

@@ -8,7 +8,7 @@ export default {
     extend: {
       animation: {
         "infinite-scroll": "infinite-scroll 20s linear infinite",
-        'move': 'move 4s linear infinite',
+        'move': 'move 2s linear infinite',
       },
       fontFamily: {
         hagrid: ['Hagrid',],
