@@ -1,15 +1,17 @@
-import MasoneryLayout from "../components/MasoneryLayout";
+// import MasoneryLayout from "../components/MasoneryLayout";
+import LatestCard from "../components/LatestCard";
+import TrendingStory from "../components/TrendingStory";
 import UpcomingSection from "../components/UpcomingSection";
 
 const Home = () => {
   const border = "#5c5a59";
 
   const bgColor = "#141414";
-  const textColor = "#eddccc";
+  // const textColor = "#eddccc";
   return (
     <>
-    <UpcomingSection />
-      <div className="flex font-hagrid font-bold w-full pt-3">
+      <UpcomingSection />
+      <div className="flex font-hagrid font-bold w-full pt-1 mt-3">
         <div
           style={{
             borderColor: border,
@@ -19,14 +21,14 @@ const Home = () => {
           <div className="w-full h-[63.3%] pt-1 mt-2 mb-[5px]">
             <div className="h-[7%] w-[98%] flex justify-between mb-2">
               <h1 className="text-3xl font-bold">Featured</h1>
-              <button
+              {/* <button
                 onClick={() => {
                   alert("maybe some other time! boss is sleeping.");
                 }}
                 className="py-1 mb-1 px-2 rounded-sm bg-stone-800"
               >
                 see all
-              </button>
+              </button> */}
             </div>
             <div className="h-[93%] w-[98%] flex flex-col justify-between">
               <div className="flex w-full h-[49%] justify-between">
@@ -141,7 +143,7 @@ const Home = () => {
                         </h1>
                       </div>
                       <h1>Lorem ipsum dolor sit amet consectetur</h1>
-                      <h2 className="text-sm text-gray-400 mt-1 pt-2 font-roboto">
+                      <h2 className="text-sm text-gray-400 mt-[2px] mb-1 font-roboto">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Quos quod amet vero Lorem, ipsum dolor.
                       </h2>
@@ -207,7 +209,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-[34%] mt-5">
+          <div className="w-full h-[34%] mt-6">
             <h1 className="text-3xl pt-3">Latest</h1>
             <div className="w-[98%] h-[83%] flex justify-between pt-2">
               <div className="w-[31.8%] h-full bg-orange-400">
@@ -310,74 +312,57 @@ const Home = () => {
           style={{
             borderColor: border,
           }}
-          className="w-[22.5%] bg-transparent relative border-l"
+          className="w-[22.5%] bg-transparent relative pl-2"
         >
           <h1
-            style={{ backgroundColor: bgColor, color: textColor }}
+            style={{ backgroundColor: bgColor, color: "#ebe3dd" }}
             className="text-3xl mt-2 py-1 px-3 font-bold"
           >
             Trending
           </h1>
           <div className="pl-[12px]">
-            <h1 className="px-1 py-[2px] mt-[2px]">
-              <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
-              </h2>
-              <div className="flex mt-1">
-                <div className="flex pr-4 border-r border-white mt-1 items-center">
-                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
-                  <h1 className="text-xs">Bigby wolf</h1>
-                </div>
-                <div className="text-xs text-pink-500 pl-4 pt-[5px]">
-                  some time
-                </div>
-              </div>
-            </h1>
-            <h1 className="px-1 py-[2px] mt-2">
-              <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
-              </h2>
-              <div className="flex mt-1">
-                <div className="flex pr-4 border-r border-white mt-1 items-center">
-                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
-                  <h1 className="text-xs">Bigby wolf</h1>
-                </div>
-                <div className="text-xs text-pink-500 pl-4 pt-[5px]">
-                  some time
-                </div>
-              </div>
-            </h1>
-            <h1 className="px-1 py-[2px] mt-2">
-              <h1 className="text-emerald-400">lendi story 1</h1>
-              <h2 className="text-sm mt-[2px] font-roboto text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.
-              </h2>
-              <div className="flex mt-1">
-                <div className="flex pr-4 border-r border-white mt-1 items-center">
-                  <div className="w-4 h-4 bg-slate-400 rounded-full mr-1"></div>
-                  <h1 className="text-xs">Bigby wolf</h1>
-                </div>
-                <div className="text-xs text-pink-500 pl-4 pt-[5px]">
-                  some time
-                </div>
-              </div>
-            </h1>
-            <div className="bg-blue-500 w-full h-[395px] mt-6 flex items-center justify-center">
+            <TrendingStory
+              heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet."
+              imgURL={
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25530c1b-5c89-4c85-8b65-8602af58c383/dgq3h68-96d3ab0d-95c0-462a-b192-ff74db31cd5d.jpg/v1/fill/w_894,h_894,q_70,strp/mew_4k__2__by_punkerlazar_dgq3h68-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1NTMwYzFiLTVjODktNGM4NS04YjY1LTg2MDJhZjU4YzM4M1wvZGdxM2g2OC05NmQzYWIwZC05NWMwLTQ2MmEtYjE5Mi1mZjc0ZGIzMWNkNWQuanBnIiwiaGVpZ2h0IjoiPD0xOTIwIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvMjU1MzBjMWItNWM4OS00Yzg1LThiNjUtODYwMmFmNThjMzgzXC9wdW5rZXJsYXphci00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.0eEZSEOOxu3KxLuKUS7KhwiTxurmkAdTiehf-mHMFdA"
+              }
+            />
+            <TrendingStory
+              heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet."
+              imgURL={
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25530c1b-5c89-4c85-8b65-8602af58c383/dgq3h68-96d3ab0d-95c0-462a-b192-ff74db31cd5d.jpg/v1/fill/w_894,h_894,q_70,strp/mew_4k__2__by_punkerlazar_dgq3h68-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1NTMwYzFiLTVjODktNGM4NS04YjY1LTg2MDJhZjU4YzM4M1wvZGdxM2g2OC05NmQzYWIwZC05NWMwLTQ2MmEtYjE5Mi1mZjc0ZGIzMWNkNWQuanBnIiwiaGVpZ2h0IjoiPD0xOTIwIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvMjU1MzBjMWItNWM4OS00Yzg1LThiNjUtODYwMmFmNThjMzgzXC9wdW5rZXJsYXphci00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.0eEZSEOOxu3KxLuKUS7KhwiTxurmkAdTiehf-mHMFdA"
+              }
+            />
+            <TrendingStory
+              heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet."
+              imgURL={
+                "https://m.media-amazon.com/images/M/MV5BZWVmOWMzMzMtODA1YS00ODk5LTlkNmMtZjMyYzhlNzM5ODE4XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg"
+              }
+            />
+            <TrendingStory
+              heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet."
+              imgURL={
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25530c1b-5c89-4c85-8b65-8602af58c383/dgq3h68-96d3ab0d-95c0-462a-b192-ff74db31cd5d.jpg/v1/fill/w_894,h_894,q_70,strp/mew_4k__2__by_punkerlazar_dgq3h68-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI1NTMwYzFiLTVjODktNGM4NS04YjY1LTg2MDJhZjU4YzM4M1wvZGdxM2g2OC05NmQzYWIwZC05NWMwLTQ2MmEtYjE5Mi1mZjc0ZGIzMWNkNWQuanBnIiwiaGVpZ2h0IjoiPD0xOTIwIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvMjU1MzBjMWItNWM4OS00Yzg1LThiNjUtODYwMmFmNThjMzgzXC9wdW5rZXJsYXphci00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.0eEZSEOOxu3KxLuKUS7KhwiTxurmkAdTiehf-mHMFdA"
+              }
+            />
+            <div className="bg-blue-800 w-full h-[300px] mt-6 flex items-center justify-center">
               <h1>ads play here</h1>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full flex mt-1">
-        <div className="w-[77.6%] h-full border-r border-gray-600 pb-2">
-          <MasoneryLayout />
+      <div className="w-full flex mt-4 justify-between">
+        <div className="w-[55.5%] h-full">
+          <LatestCard />
+          <LatestCard />
+          <LatestCard />
+          <LatestCard />
         </div>
-        <div className="w-[22.4%] h-[60vh]"></div>
+        <div className="w-[42.5%] bg-slate-700"></div>
       </div>
     </>
   );

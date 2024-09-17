@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Scroller = ({textColor, bgColor, emailLink}) => {
   return (
-    <div id="scroller" style={{borderColor: textColor}} className="border-t">
+    <div id="scroller" style={{borderColor: textColor}} className="border-t scrollbar-hide select-none">
       <h1>
         Signup to the {"  "}
         <span style={{ backgroundColor: textColor, color: bgColor }}>

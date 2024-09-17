@@ -6,7 +6,7 @@ const UpcomingSection = () => {
 
   return (
     <>
-      <div className="flex mt-1 items-center justify-between">
+      {/* <div className="flex mt-1 items-center justify-between">
         <h1 className="font-hagrid font-bold text-[#fc116b]">Upcoming</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ const UpcomingSection = () => {
         >
           <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
         </svg>
-      </div>
+      </div> */}
       <div
         // style={{ backgroundColor: textColor }}
         className="flex w-full bg-emerald-400 gap-3 overflow-auto flex-nowrap scrollbar-hide h-[15vh] items-center font-hagrid font-bold"
