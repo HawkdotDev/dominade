@@ -2,10 +2,13 @@ const LatestCard = () => {
   return (
     <div className="flex py-3 bg-stone-800 mb-5">
       <div className="pl-2 pr-6 flex flex-col justify-between">
-        <h1 className="text-2xl font-hagrid">
+        <div>
+
+        <h1 className="text-2xl font-hagrid cursor-pointer">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima.
           Lorem, ipsum dolor sit amet consectetur adipisicing.
         </h1>
+        </div>
         <div className="flex mt-2">
           <h1>Bigby wolf</h1>
           <h1>some random time</h1>

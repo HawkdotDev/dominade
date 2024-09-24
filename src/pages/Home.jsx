@@ -1,17 +1,16 @@
-// import MasoneryLayout from "../components/MasoneryLayout";
-import LatestCard from "../components/LatestCard";
+// eslint-disable-next-line no-unused-vars
+import Section2 from "../components/Section2";
 import TrendingStory from "../components/TrendingStory";
 import UpcomingSection from "../components/UpcomingSection";
 
 const Home = () => {
   const border = "#5c5a59";
-
   const bgColor = "#141414";
-  // const textColor = "#eddccc";
+
   return (
     <>
       <UpcomingSection />
-      <div className="flex font-hagrid font-bold w-full pt-1 mt-3">
+      <div className="flex font-hagrid font-bold w-full pt-1 my-3">
         <div
           style={{
             borderColor: border,
@@ -219,7 +218,7 @@ const Home = () => {
                     alt="wolf among us 2"
                     className="h-full w-full object-cover object-left-top absolute"
                   />
-                  <div className="w-full h-full bg-black/40 absolute flex justify-between flex-col">
+                  <div className="w-full h-full bg-black/15 absolute flex justify-between flex-col">
                     <div className="flex gap-2 items-center mb-1 p-4">
                       <h1 className="text-sm bg-[#b910f2] px-1 py-[2px] text-black">
                         #Anime
@@ -228,7 +227,7 @@ const Home = () => {
                         #Buzz
                       </h1>
                     </div>
-                    <div className="px-4 py-3 bg-neutral-800">
+                    <div className="px-4 py-3 bg-neutral-800/85">
                       <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
                       <div className="flex mt-1">
                         <div className="flex pr-4 border-r border-white">
@@ -250,7 +249,7 @@ const Home = () => {
                     alt="wolf among us 2"
                     className="h-full w-full object-cover object-left-bottom absolute"
                   />
-                  <div className="w-full h-full bg-black/40 absolute flex justify-between flex-col">
+                  <div className="w-full h-full bg-black/15 absolute flex justify-between flex-col">
                     <div className="flex gap-2 items-center mb-1 p-4">
                       <h1 className="text-sm bg-[#4BFFA5] px-1 py-[2px] text-black">
                         #Esports
@@ -259,7 +258,7 @@ const Home = () => {
                         #Buzz
                       </h1>
                     </div>
-                    <div className="px-4 py-3 bg-neutral-800">
+                    <div className="px-4 py-3 bg-neutral-800/85">
                       <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
                       <div className="flex mt-1">
                         <div className="flex pr-4 border-r border-white">
@@ -281,7 +280,7 @@ const Home = () => {
                     alt="wolf among us 2"
                     className="h-full w-full object-cover object-left-bottom absolute"
                   />
-                  <div className="w-full h-full bg-black/40 absolute flex justify-between flex-col">
+                  <div className="w-full h-full bg-black/15 absolute flex justify-between flex-col">
                     <div className="flex gap-2 items-center mb-1 p-4">
                       <h1 className="text-sm bg-[#4BFFA5] px-1 py-[2px] text-black">
                         #Esports
@@ -290,7 +289,7 @@ const Home = () => {
                         #Buzz
                       </h1>
                     </div>
-                    <div className="px-4 py-3 bg-neutral-800">
+                    <div className="px-4 py-3 bg-neutral-800/85">
                       <h1>Lorem ipsum dolor sit amet consectetur ?</h1>
                       <div className="flex mt-1">
                         <div className="flex pr-4 border-r border-white">
@@ -355,15 +354,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex mt-4 justify-between">
-        <div className="w-[55.5%] h-full">
-          <LatestCard />
-          <LatestCard />
-          <LatestCard />
-          <LatestCard />
-        </div>
-        <div className="w-[42.5%] bg-slate-700"></div>
-      </div>
+      {/* <Section2 /> */}
     </>
   );
 };

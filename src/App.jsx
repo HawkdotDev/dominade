@@ -15,6 +15,7 @@ import Esports from "./pages/categories/Esports";
 import Buzz from "./pages/categories/Buzz";
 import Gaming from "./pages/categories/Gaming";
 import FilmandTv from "./pages/categories/FilmandTv";
+import { useState } from "react";
 
 function App() {
   // light theme
@@ -41,6 +42,8 @@ function App() {
   const emailLink = "https://www.google.com";
   const paperName = "Dominade";
 
+  const [sideNav, setsideNav] = useState(false)
+
   return (
     <>
       <Router basename="/dominade">
@@ -49,8 +52,26 @@ function App() {
             backgroundColor: bgColor,
             color: textColor,
           }}
-          className="w-screen text-lg px-6 flex flex-col items-center"
+          className="w-screen select-none text-lg px-6 flex flex-col items-center relative"
         >
+          <div  className={`w-full h-screen z-[101] justify-between fixed ${sideNav ? "flex" : "hidden"}`}>
+            <div className="w-[35%] h-full right-0">
+
+            </div>
+            <div className="w-[25%] h-full bg-blue-600 right-0 flex flex-col justify-between p-3">
+              <div className="flex justify-between">
+                <div className="bg-pink-600 rounded-full w-9 h-9">
+
+                </div>
+                <button onClick={() => setsideNav(!sideNav)} className="bg-green-600 rounded-full w-9 h-9">
+
+                </button>
+              </div>
+              <div className="">
+
+              </div>
+            </div>
+          </div>
           <div className="w-[92.5%] container">
             <LatestNotification
               backgroundColor={bgColor}
@@ -98,7 +119,7 @@ function App() {
                     })}
                   </div>
                   <div className="flex items-center border-l border-gray-500 w-[22.5%] justify-between">
-                    <div className="flex font-hagrid items-center cursor-pointer hover:bg-purple-500 hover:text-black w-[55%] h-[30px] justify-center pl-3">
+                    <div onClick={() => setsideNav(!sideNav)} className="flex font-hagrid items-center cursor-pointer hover:bg-purple-500 hover:text-black w-[55%] h-[30px] justify-center pl-3">
                       <h1>More</h1>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
